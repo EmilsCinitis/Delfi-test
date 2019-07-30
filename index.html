@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>EDU</title>
+		<meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+		<link rel="stylesheet" href="base.css" type="text/css" /> <!-- Fails netika atrasts, jo bija .scss, tika mainīts uz .css -->
+
+	</head>
+	<body>
+		<div id="page-wrapper"> <!-- Noņemts liekais style tags, tika pievienots .css failam pie #page-wrapper -->
+		<h1 id="heading">Kontaktforma</h1>
+			<div id="errors"></div> <!-- Liekais style tags pievienots .css failā pie #errors -->
+			<form id="messageForm" action="addMessage.php" method="POST"> <!-- Mainīts action uz addMessage.php, kas pievieno ziņu datubāzei; pievienots id, lai formu varētu apstrādāt ar JavaScript -->
+				<div class="row center"> <!-- Virsraksts tiek centrēts -->
+					<h1>Lūdzu, ievadi savus datus</h1>
+				</div>
+				<div class="row">
+					<label for="full-name">Vārds, Uzvārds: <a class="star">*</a></label> 
+					<!-- 
+						Visām zvaigznēm pārveidots tags no <font> uz <a>, liekais stils pievienots klasē star iekš .css faila
+						label tagam pievienots for, kas norādam, kuram elementam label ir domāts
+					-->
+					<input type="text" name="full-name" value="" id="full-name" /> <!-- id un name mainīts uz angļu valodu, lai visiem mainīgajiem būtu viena valoda -->
+					<!-- div ar clearfloat klasi izņemts, jo tas nebija nepieciešams -->
+				</div>
+				<div class="row">
+					<label for="cell-nr">Telefons numurs: <a class="star">*</a></label>
+					<input type="text" name="cell-nr" value="" id="cell-nr" />
+				</div>
+				<div class="row">
+					<label for="address">Adrese:</label>
+					<input type="text" name="address" value="" id="address" /> <!-- id un name mainīts uz latviešu valodu, lai visiem mainīgajiem būtu viena valoda -->
+				</div>
+				<div class="row">
+					<label for="message">Ziņojums: <a class="star">*</a></label>
+					<textarea name="message" value="" id="message"></textarea>
+				</div>
+				<div class="row center"> 
+					<a class="large button" href="#" onclick="validateForm() ? document.getElementById('messageForm').submit() : false" id="submit">Sūtīt &rarr;</a> 
+					<!-- 
+						Noņemti center tagi, jo tie nav atbalstīti HTML5, izmanto css, lai centrētu 
+						Mainīts formas sūtīšanas veids uz drošāku (pēc id)
+					-->
+					<a class="large button" href="displayMessagesController.php" id="showMessages">Apskatīt ziņas</a> <!-- Apskatīt visas ziņas no datubāzes -->
+				</div>
+			</form>
+		</div>
+	</body>
+
+	<!-- Skriptu lādēšana pārlikta uz beigām, lai sākumā ielādē lapu un tad tikai skriptus, tādējādi uzlabo lapas grafisko ielādes ātrumu -->
+	<script type="text/javascript" src="base.js"></script>
+	<script type="text/javascript" src="jquery.js"></script>
+</html>

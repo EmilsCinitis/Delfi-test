@@ -1,0 +1,80 @@
+h1 {
+    font-family: Lucida Sans Unicode;
+    border-bottom:1px solid silver;
+    font-weight:normal;
+}
+
+#page-wrapper {
+    border:1px solid silver;
+    width:500px;
+    position:absolute;
+    top:40px;
+    left:50%;
+    margin-left:-250px;
+    padding:5px;
+}
+
+#heading {
+    font-size: 24px;
+    text-align:center;
+}
+
+#errors {
+    border:1px solid #777777;
+    padding:3px;
+    display:none;
+    color:#EB8282;
+}
+
+.row {
+    margin:15px 0;
+}
+
+.row label {
+    display:inline-block;
+    width:150px;
+    font-family: Lucida Sans Unicode; 
+}
+
+.row input[type=text] {
+    width:200px;
+    padding:3px;
+    border:1px solid #777777;
+}
+
+textarea {
+    width:200px;
+    height: 150px;
+    padding:3px;
+    border:1px solid #777777;
+}
+
+.large {
+    font-size: 24px;
+}
+
+#submit {
+    background:#7EB87E;
+    border:1px solid #4D814D;
+}
+
+.button {
+    color:#333;
+    text-decoration:none;
+    display:inline-block;
+    font-family: Lucida Sans Unicode;
+    padding:4px 8px;
+}
+
+#showMessages {
+    background:gray;
+    border:1px solid gray;
+}
+
+.center {
+    text-align: center;
+}
+
+.star {
+    color:#F35151;
+}
