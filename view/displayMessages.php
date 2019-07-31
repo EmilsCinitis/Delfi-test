@@ -1,13 +1,17 @@
 <?php 
-    require_once('message.php');
+    require_once('../object/message.php');
     session_start();
+
+    if($_SESSION['messages'] == null){ //Ja lapa tiek atjaunināta, tad pieprasa, lai controller tiek palaists
+        header('location: ../controller/displayMessagesController.php');
+    }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<title>EDU</title>
 		<meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
-		<link rel="stylesheet" href="messages.css" type="text/css" />
+		<link rel="stylesheet" href="../style/messages.css" type="text/css" />
     </head>
     <body>
 		<div class="container">
@@ -55,6 +59,7 @@
                     </tr>
                     <?php
                                 }
+                                $_SESSION['messages'] = null;
                             }
                     ?>
                 </table>
@@ -67,8 +72,8 @@
                 ?>
             </div>
             <div class="row centered">
-                <a class="button" href=".">Atpakaļ</a>
-                <a class="button" href="displayMessagesController.php">Atjaunot</a>
+                <a class="button" href="..">Atpakaļ</a>
+                <a class="button" href="../controller/displayMessagesController.php">Atjaunot</a>
             </div>
         </div>
 	</body>

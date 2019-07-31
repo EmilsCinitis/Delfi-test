@@ -13,12 +13,12 @@
 table#message-table {
     border-collapse: collapse;
     table-layout: fixed;
-    width: 100%;  
-}
+    width: 100%;
 
-table#message-table th, td{
-    border: 1px solid gray;
-    word-wrap: break-word;
+    th,td{
+        border: 1px solid gray;
+        word-wrap: break-word;
+    }
 }
 
 .error {

@@ -1,2 +1,3 @@
 db.properties
-.sass-cache
+style/base.css
+style/messages.css

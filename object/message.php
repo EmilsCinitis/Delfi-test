@@ -1,4 +1,5 @@
 <?php 
+    //Objekts, kurā saglabā visu informāciju par ziņojumu
     class Message{
         private $full_name;
         private $cell_nr;
